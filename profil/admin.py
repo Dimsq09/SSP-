@@ -1,10 +1,12 @@
 from django.contrib import admin
-from . models import Barang
+from . models import Barang, Jenis
 # Register your models here.
 
 class BarangAdmin(admin.ModelAdmin):
-    list_display = ('kdbrg', 'nama', 'stok', 'harga', 'link_gbr')
-    list_filter = ('nama',)
-    search_fields = ('nama','harga')
+    list_display = ('kdbrg', 'nama', 'stok', 'harga', 'link_gbr','tgl_input','id_jenis')
+    list_filter = ('id_jenis__nama',)
+    search_fields = ('nama','kdbrg','id_jenis__nama')
+    list_per_page = 3
 
 admin.site.register(Barang, BarangAdmin)
+admin.site.register(Jenis)
