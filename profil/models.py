@@ -18,6 +18,16 @@ class Barang(models.Model):
     tgl_input=models.DateTimeField(auto_now_add=True)
     id_jenis=models.ForeignKey(Jenis, on_delete=models.CASCADE, null=True)
 
+
     def __str__ (self):
         return self.nama
+    
+class About(models.Model):
+    judul = models.CharField(max_length=200)
+    isi = models.TextField()
+    img = models.ImageField(upload_to='' , blank=true)
+
+    def __str__(self):
+        return self.judul
+
     
