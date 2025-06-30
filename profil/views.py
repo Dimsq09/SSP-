@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import About
+from .form import FormBarang
+
+
 # Create your views here.
 def home(request):
    about = About.objects.first()
@@ -13,3 +16,7 @@ def produk(request):
 
 def registrasi(request):
     return render(request,'registrasi.html')
+
+def form_barang(request):
+    from_barang = FormBarang()
+    return render(request, 'Tambah.html', {'form_barang': from_barang})

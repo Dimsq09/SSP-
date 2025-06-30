@@ -25,9 +25,11 @@ class Barang(models.Model):
 class About(models.Model):
     judul = models.CharField(max_length=200)
     isi = models.TextField()
-    img = models.ImageField(upload_to='' , blank=true)
+    img = models.ImageField(upload_to='' , blank=True)
 
     def __str__(self):
         return self.judul
+
+
 
     
